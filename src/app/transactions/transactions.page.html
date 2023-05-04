@@ -1,0 +1,49 @@
+<ion-content>
+  <ion-icon
+    name="arrow-back-outline"
+    class="ion-padding backarrow"
+    routerLink="/home"
+  ></ion-icon>
+  <div class="main-div ion-padding">
+    <h1 class="ion-padding">Transactions</h1>
+    <div class="list">
+      <ion-list>
+        <ion-item-sliding *ngFor="let transaction of moneyTransactions">
+          <ion-item>
+            <ion-label>
+              {{transaction.title}}
+              <p
+                [ngClass]="{expense:transaction.type==='expense',income:transaction.type==='income'}"
+              >
+                {{transaction.subTitle}}
+              </p>
+            </ion-label>
+            <p
+              class="amount"
+              [ngClass]="{expense:transaction.type==='expense',income:transaction.type==='income'}"
+            >
+              {{transaction.amount}}Dh
+            </p>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option color="danger">
+              <ion-icon
+                name="trash-outline"
+                (click)="delete_transaction(transaction.id)"
+              ></ion-icon>
+            </ion-item-option>
+            <ion-item-option color="dark">
+              <ion-icon
+                name="create-outline"
+                routerLink="/add-edit-data/{{transaction.id}}"
+              ></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+    <ion-fab-button color="dark" routerLink="/add-edit-data/add">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </div>
+</ion-content>

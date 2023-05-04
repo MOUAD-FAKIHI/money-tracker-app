@@ -1,0 +1,30 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="wrapper">
+    <h3>Sign Up</h3>
+
+    <ion-item lines="none">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" placeholder="Full Name" [(ngModel)]="user.name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" placeholder="Email" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+
+    <ion-button (click)="SignUp()">Sign Up</ion-button>
+    <ion-button routerLink="/login">Already have an Account</ion-button>
+  </div>
+</ion-content>
+

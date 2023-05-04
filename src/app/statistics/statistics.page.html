@@ -1,0 +1,28 @@
+<ion-content>
+  <ion-icon
+    name="arrow-back-outline"
+    class="ion-padding"
+    routerLink="/home"
+  ></ion-icon>
+  <h1 class="ion-padding">Statistics</h1>
+  <div class="ion-padding">
+    <ion-card>
+      <ion-card-header> Bar Chart </ion-card-header>
+      <ion-card-content>
+        <canvas
+          #barCanvas
+          style="position: relative; height: 20vh; width: 40vw"
+        ></canvas>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header> Doughnut Chart </ion-card-header>
+      <ion-card-content>
+        <canvas
+          #doughnutCanvas
+          style="position: relative; height: 20vh; width: 40vw"
+        ></canvas>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
